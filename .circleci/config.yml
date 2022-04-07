@@ -10,8 +10,7 @@ jobs:
       - checkout
       - run:
           name: rspec
-          command: sudo apt-get update && sudo apt-get install -y sqlite3 libsqlite3-dev
-          command: bundle install && bundle exec rake db:migrate RAILS_ENV=test && bundle exec rspec
+          command: sudo apt-get update && sudo apt-get install -y sqlite3 libsqlite3-dev && bundle install && bundle exec rake db:migrate RAILS_ENV=test && bundle exec rspec
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
