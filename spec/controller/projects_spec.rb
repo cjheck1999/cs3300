@@ -33,33 +33,33 @@ RSpec.describe ProjectsController, type: :controller do
   end
 end
 
-context "POST #projects" do
-login_user
-it "returns a failure response" do
-  post :create, :params => { :project => { :title => "" , :description => "Test description" } }
+  context "POST #projects" do
+  login_user
+  it "returns a failure response" do
+    post :create, :params => { :project => { :title => "" , :description => "Test description" } }
   
-  expect(Project.count).to eq(0)
-end
-end
-
-context "PATCH #projects/1" do
-  login_user
-  let!(:project) { Project.create(title: "Test title", description: "Test description") }
-  it "returns a success response" do
-    patch :update, :params => { :id => project, :project => { :title => "Test title", :description => "New description" }}
-    expect(Project.first.description).to eq "New description"
-  end
-end
-
-context "DELETE #projects/1" do
-  login_user
-  let!(:project) { Project.create(title: "Test title", description: "Test description") }
-  it "Project was deleted" do
-    expect(Project.count).to eq(1)
-    delete :destroy, :params => { :id => project }
     expect(Project.count).to eq(0)
+    end
   end
-  it "Project was deleted" do
+
+  context "PATCH #projects/1" do
+    login_user
+    let!(:project) { Project.create(title: "Test title", description: "Test description") }
+   it "returns a success response" do
+      patch :update, :params => { :id => project, :project => { :title => "Test title", :description => "New description" }}
+      expect(Project.first.description).to eq "New description"
+    end
   end
-end
+
+  context "DELETE #projects/1" do
+    login_user
+    let!(:project) { Project.create(title: "Test title", description: "Test description") }
+    it "Project was deleted" do
+      expect(Project.count).to eq(1)
+      delete :destroy, :params => { :id => project }
+      expect(Project.count).to eq(0)
+    end
+    it "Project was deleted" do
+    end
+  end
 end
