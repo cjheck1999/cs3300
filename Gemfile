@@ -47,6 +47,8 @@ gem "bootsnap", require: false
 
 gem "mini_racer"
 gem "devise"
+gem "bootstrap", "~> 4.6.1"
+gem "jquery-rails"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -73,6 +75,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem "factory_bot_rails"
 end
 
 group :production do
