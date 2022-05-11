@@ -9,6 +9,11 @@
 <p class="h5 text-center"><%= @project.description %></p>
 
 <% if user_signed_in? %>
-<%= link_to 'Edit', edit_project_path(@project) %> 
-<%= link_to 'Back', projects_path %>
+
+<div class="btn-group" role="group" aria-label="Project Buttons">
+<%= button_to 'Delete', @project, method: :delete, :class => "btn btn-danger" %>
+<%= button_to 'Edit', edit_project_path(@project), method: :get, :class => "btn btn-secondary" %>
+<%= button_to 'Back', projects_path, method: :get, :class => "btn btn-secondary"  %>
+</div>
+
 <% end %>

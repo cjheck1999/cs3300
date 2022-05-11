@@ -17,9 +17,9 @@
     <a class="navbar-brand" href="/">Home</a>
     <div class="navbar-nav ml-auto">
     <% if user_signed_in? %>
-    <%= button_to "New Project", new_project_path, method: :get, :class => "btn btn-primary" , :form_class => "form-inline"%>
+    <%= button_to "New Project", new_project_path, method: :get, :class => "btn btn-secondary" , :form_class => "form-inline"%>
     <div style="padding-left: 10px;">
-    <%= button_to "Edit Profile", edit_user_registration_path, method: :get, :class => "btn btn-warning",  :form_class => "form-inline"%>
+    <%= button_to "Edit Profile", edit_user_registration_path, method: :get, :class => "btn btn-secondary",  :form_class => "form-inline"%>
     </div>
    
     <div style="padding-left: 10px;" >
